@@ -1,8 +1,8 @@
-//const host = `ws://${ location.hostname }:57772`;
+const host = `ws://${ location.hostname }:57772`;
 const myName = "shrys";
 const myAvatar = "http://nikita.tk/img/avatar.jpg";
 
-let URL = host + "/csp/user/WebCourse.ChatWebSocket.cls",
+let URL = host + "/csp/chat/Chat.ChatWebSocket.cls",
     ws = new WebSocket(URL);
 
 ws.addEventListener("open", () => ws.send(JSON.stringify({
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("keydown", (event) => {
         if (input.value && event.keyCode === 13) {
             ws.send(JSON.stringify({ "text": input.value }));
-            //printMessage({name: myName,text:input.value});
+            printMessage({name: myName,text:input.value});
             input.value = "";
         }
     });
