@@ -1,1 +1,2 @@
-text 
+added Chat.ChatWebSocket class to create a connection
+added Chat.WebSocketEcho class for debugging connection
